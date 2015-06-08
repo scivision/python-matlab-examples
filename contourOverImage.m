@@ -26,7 +26,8 @@ altkm = 150; %arbitrary
 
 figure(2),clf(2)
 %image
-a3 = axes('nextplot','add');%hi3 = pcolor(x,y,V,'parent',a3);
+a3 = axes('nextplot','add');
+hi3 = pcolor(x,y,V,'parent',a3);
 set(hi3,'zdata',0*V+altkm)
 
 [C3,hc3] = contour(x,y,Z,'parent',a3);
