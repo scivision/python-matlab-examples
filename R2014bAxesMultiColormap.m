@@ -7,7 +7,7 @@ a2 = subplot(1,2,2,'parent',f);
 p = peaks();
 
 imagesc(p,'parent',a1)
-colormap(a1,'parula')
+colormap(a1,'jet')
 colorbar('peer',a1)
 
 imagesc(p,'parent',a2)
