@@ -12,15 +12,15 @@ Elevation [0,90)
 """
 We have to reverse direction of "elevation"
 """
-from numpy import array,radians
+from numpy import array,radians,atleast_1d
 from matplotlib.pyplot import figure,show
 
 def polarplot(az,el):
     """
     I use astype(float) because some programs give off lists or object arrays that radians() doesn't like
     """
-    az = radians(az.astype(float))
-    el = 90-el.astype(float)
+    az = radians(atleast_1d(az).astype(float))
+    el = 90 - atleast_1d(el).astype(float)
 
     ax2=figure(2).gca(polar=True)
     ax2.plot(az,el, marker='o',linestyle='.')
