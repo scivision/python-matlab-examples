@@ -8,9 +8,17 @@
 function contourImage2()
     z0=150;
     [x,y,z,Ne] = fakedata();
+%% 2-D contour with ONE color over grayscale image
+    [ax,himg] = baseplot(x,y); %plots pcolor image
+    colormap(ax,'gray')
+    contour(x,y,Ne(:,:,4),'b')
+    
+    
+%% 3-D contour over image demo    
     %things that don't work
-    ax = baseplot(x,y,z0);
-    contourhack(x,y,z0,Ne,ax)
+    %[ax,himg] = baseplot(x,y);
+    %set(himg,'zdata',z0*ones(ny,nx)) %moves pcolor plot to 150km
+    %contourhack(x,y,z0,Ne,ax)
     %hack that works
     flat = flattening(x,y,Ne);
     plot3Dflat(x,y,z0,flat)
@@ -26,12 +34,11 @@ function [x,y,z,Ne] = fakedata()
     z=linspace(100,500,nz);
 end 
 
-function ax = baseplot(x,y,z0)
+function [ax,himg] = baseplot(x,y)
     ny = length(y); nx = length(x);
     figure(1),clf()
     ax = axes('parent',1,'nextplot','add');
     himg = pcolor(x,y,rand(ny,nx)*30,'parent',ax);
-    set(himg,'zdata',z0*ones(ny,nx)) %moves pcolor plot to 150km
 end 
 
 function contourhack(x,y,z0,Ne,ax)
