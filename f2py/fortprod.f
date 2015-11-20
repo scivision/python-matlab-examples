@@ -26,9 +26,19 @@
         Subroutine ProdInOut(x,y,z)
 !       This subroutine will pass result back to Python, but requires
 !       pre-declaration of z in Python (to any numeric value in this case)
-
-        Intent(in out)  :: z
-
+        Intent(In) :: x,y
+        Intent(inout)  :: z
+!       note: next line is to fix a bug in Numpy 1.9, 1.10 (possibly others) where f2py is not
+!       honoring the intent(inout) in the fortran code, intent(inout) or intent(in out) in comment. 
+!       It must be cf2py intent(in,out) or !f2py intent(in,out)
         z = x * y
 
         End Subroutine
+        
+        Pure Function prodpure(x,y)
+!       Pure functions require intent declaration
+        Intent(in) :: x,y
+        
+        prodpure = x*y
+        
+        End Function

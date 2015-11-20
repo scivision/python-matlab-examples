@@ -22,22 +22,22 @@ Note: imports from f2py will always be ALL lowercase!
 Michael Hirsch
 """
 import numpy
-from fortprod import prodintent, prodnointent,prodinout
+from fortprod import prodintent, prodnointent,prodinout,prodpure
 
 
 x=3
 y=2
 #%%
 zint = prodintent(x,y)
-print(zint)
+assert zint == x*y
 #%%
 znoint = 12345
 znoint = prodnointent(x,y,znoint)
 assert znoint is None
 #%%
-if numpy.__version__ != '1.10.1':
-    zinout = 23456
-    zinout = prodinout(x,y,zinout)
-    print(zinout)
-else:
-    print('Numpy 1.10.1 has a bug with INOUT')
+zpure = prodpure(x,y)
+assert zpure == x*y
+#%%
+zinout = 23456.
+zinout = prodinout(x,y,zinout)
+assert zinout==x*y, 'AssertionError on intent(inout), bug in Numpy f2py is known, result: {}'.format(zinout)
