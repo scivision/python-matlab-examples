@@ -11,7 +11,7 @@ If you add to fortprod.f in subroutine ProdInOut the line::
 
     !f2py intent(in,out) :: z
 
-it will work. This is a bug.
+it will work. `This is a bug <https://github.com/numpy/numpy/issues/6654>`_.
 
 It will **not** work with::
     
