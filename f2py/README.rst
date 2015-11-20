@@ -7,7 +7,7 @@ then::
 
     python f2py_demo.py
 
-If you add to fortprod.f in subroutin ProdInOut the line::
+If you add to fortprod.f in subroutine ProdInOut the line::
 
     !f2py intent(in,out) :: z
 
