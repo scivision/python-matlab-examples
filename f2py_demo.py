@@ -29,7 +29,7 @@ x=3
 y=2
 #%%
 zint = prodintent(x,y)
-assert zint == x*y
+print(zint)
 #%%
 znoint = 12345
 znoint = prodnointent(x,y,znoint)
