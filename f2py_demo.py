@@ -11,7 +11,7 @@ You can setup an enviroment with Numpy 1.9.3 if you want to test this, until
 the fixed is released (hopefully Numpy 1.10.2)
 
 
-f2py3 -m fortprod -c fortprod.py
+f2py3 -m fortprod -c fortprod.f
 then type:
 python3 f2py_demo.py
 
