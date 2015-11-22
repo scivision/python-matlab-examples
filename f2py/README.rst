@@ -15,9 +15,9 @@ then::
 
     python f2py_demo.py
 
-Note
-====
-If the subroutine you want to interface Python with has for a particular variable::
+Note on Intent(inout)
+=====================
+If the subroutine you want to interface Python with has the Fortran statement for a particular variable::
 
     Intent(inout) :: myvariable
     
