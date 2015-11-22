@@ -1,5 +1,13 @@
-to run example showing bug with f2py in Numpy 1.9 and 1.10 and possibly 
-others, first compile::
+=============
+demo f2py
+=============
+
+Here's a simple example of using f2py to run Fortran code from Python
+
+Minimal working example
+=======================
+
+first compile::
 
     f2py -m fortprod -c fortprod.f
 
