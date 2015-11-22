@@ -7,12 +7,16 @@ then::
 
     python f2py_demo.py
 
-If you add to fortprod.f in subroutine ProdInOut the line::
+Note
+====
+If the subroutine you want to interface Python with has for a particular variable::
 
-    !f2py intent(in,out) :: z
+    Intent(inout) :: myvariable
+    
+you must add::
 
-it will work. `This is a bug <https://github.com/numpy/numpy/issues/6654>`_.
+    !f2py intent(in,out) :: myvariable
 
 It will **not** work with::
     
-    !f2py intent(inout) :: z
+    !f2py intent(inout) :: myvariable
