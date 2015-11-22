@@ -4,7 +4,8 @@ demo of need to use INTENT() in the Fortran code with f2py
 as current versions of f2py assume INTENT(IN), which is an obvious
 issue for getting results back to Python!
 
-NOTE: there is a regression in Numpy 1.10.1 that is stopping INTENT(INOUT)
+NOTE: there is a regression in Numpy 1.10.1 that is stopping 
+!f2py intent(in,out)
 from working
 https://github.com/numpy/numpy/issues/6654
 You can setup an enviroment with Numpy 1.9.3 if you want to test this, until
@@ -40,4 +41,4 @@ assert zpure == x*y
 #%%
 zinout = 23456.
 zinout = prodinout(x,y,zinout)
-assert zinout==x*y, 'AssertionError on intent(inout), bug in Numpy f2py is known, result: {}'.format(zinout)
+assert zinout==x*y, 'AssertionError on !f2py intent(in,out), bug in Numpy 1.10.1 f2py is known, result: {}'.format(zinout)
