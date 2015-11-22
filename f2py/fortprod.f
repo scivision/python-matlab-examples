@@ -28,9 +28,8 @@
 !       pre-declaration of z in Python (to any numeric value in this case)
         Intent(In) :: x,y
         Intent(inout)  :: z
-!       note: next line is to fix a bug in Numpy 1.9, 1.10 (possibly others) where f2py is not
-!       honoring the intent(inout) in the fortran code, intent(inout) or intent(in out) in comment. 
-!       It must be cf2py intent(in,out) or !f2py intent(in,out)
+!       note: next line is required always when using intent(inout) in Fortran
+!f2py intent(in,out) :: z
         z = x * y
 
         End Subroutine
