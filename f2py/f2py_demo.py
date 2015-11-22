@@ -22,7 +22,7 @@ Note: imports from f2py will always be ALL lowercase!
 
 Michael Hirsch
 """
-import numpy
+import numpy as np
 from fortprod import prodintent, prodnointent,prodinout,prodpure
 
 
@@ -41,4 +41,4 @@ assert zpure == x*y
 #%%
 zinout = 23456.
 zinout = prodinout(x,y,zinout)
-assert zinout==x*y, 'AssertionError on !f2py intent(in,out), bug in Numpy 1.10.1 f2py is known, result: {}'.format(zinout)
+assert zinout==x*y, 'AssertionError on !f2py intent(in,out), bug in Numpy 1.10.1 f2py is known, result: {} for Numpy {}'.format(zinout,np.__version__)
