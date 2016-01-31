@@ -24,7 +24,7 @@ def polarplot(az,el):
     el = 90 - atleast_1d(el).astype(float)
 
     ax2=figure().gca(polar=True)
-    ax2.plot(az,el, marker='o',linestyle='.')
+    ax2.plot(az,el, marker='o',linestyle='none')
     ax2.set_theta_zero_location('N')
     ax2.set_theta_direction(-1)
     ax2.set_yticks(range(0, 90+10, 10))                   # Define the yticks
@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
     # arbitrary test numbers
     az = array([10,50,30,185,273])
-    el = array([30,5, 85,36, 29])
+    el = array([30,5, 80,36, 29])
 
     polarplot(az,el)
     show()
