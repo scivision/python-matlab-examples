@@ -4,16 +4,19 @@ demo f2py
 
 Here's a simple example of using f2py to run Fortran code from Python
 
+.. contents::
+
 Minimal working example
 =======================
+::
 
-first compile::
-
-    f2py -m fortprod -c fortprod.f
-
-then::
+    make
 
     python f2py_demo.py
+
+Elemental and Real: Fortran Functions
+=====================================
+At this time (Numpy 1.10) f2py understands Pure Fortran functions, but does not understand Elemental Fortran functions (which are implicitly Pure).
 
 Note on Intent(inout)
 =====================
@@ -21,10 +24,4 @@ If the subroutine you want to interface Python with has the Fortran statement fo
 
     Intent(inout) :: myvariable
     
-you must add::
-
-    !f2py intent(in,out) :: myvariable
-
-It will **not** work with::
-    
-    !f2py intent(inout) :: myvariable
+This ``Intent(inout)`` means the variable is modified **in place**, it is *not* on the left hand side of the equals sign in Python.
