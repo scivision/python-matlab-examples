@@ -4,7 +4,7 @@ MAIN=prog_fortprod.f90
 FC = gfortran 
 F2PY = f2py3
 
-FFLAGS = -std=f2008 -Wall -Wpedantic -Wextra -mtune=native -fexternal-blas -ffast-math -O3
+FFLAGS = -std=f2008 -Wall -Wpedantic -Wextra -mtune=native -fexternal-blas -O3
 
 
 OBJS=$(SRC:.f90=.o)
