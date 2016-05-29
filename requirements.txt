@@ -1,0 +1,6 @@
+setuptools
+nose
+numpy
+h5py
+matplotlib
+bokeh
