@@ -13,12 +13,10 @@ with open('README.rst','r') as f:
 
 
 setup(name='python-matlab-examples',
-      version='0.1',
 	    description='Tricks and tips with Matlab and Python',
 	    long_description=long_description,
 	    author='Michael Hirsch',
 	    url='https://github.com/scienceopen/python-matlab-examples',
-      dependency_links = [],
+          dependency_links = [],
 	  install_requires=[],
-      packages=[],
 	  )
