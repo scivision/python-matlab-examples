@@ -3,20 +3,15 @@ from setuptools import setup
 import subprocess
 
 try:
-    subprocess.run(['conda','install','--yes','--file','requirements.txt'])
+    subprocess.call(['conda','install','--file','requirements.txt'])
 except Exception as e:
     pass
 
 
-with open('README.rst','r') as f:
-    long_description = f.read()
-
-
 setup(name='python-matlab-examples',
 	    description='Tricks and tips with Matlab and Python',
-	    long_description=long_description,
 	    author='Michael Hirsch',
 	    url='https://github.com/scienceopen/python-matlab-examples',
-          dependency_links = [],
-	  install_requires=[],
+        dependency_links = [],
+	    install_requires=[],
 	  )
