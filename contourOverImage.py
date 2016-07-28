@@ -2,19 +2,10 @@
 """
 Plots an image, then plots a contour over top of the image
 """
-from numpy.random import rand
-from numpy import meshgrid, arange
 from matplotlib.pyplot import figure,show
-from matplotlib.mlab import bivariate_normal
+#
+from pyplots.data import testdata_2d
 
-def testdata():
-    delta = 0.025
-    V = 0.1*rand(100,100)
-    x = arange(-3.0, 3.0, delta)
-    y = arange(-2.0, 2.0, delta)
-    X, Y = meshgrid(x, y)
-    Z = bivariate_normal(X, Y, 1.0, 1.0, 0.0, 0.0)
-    return X,Y,Z,V
 
 def plotimagecontour(X,Y,Z,V):
     fg = figure()
@@ -28,6 +19,6 @@ def plotimagecontour(X,Y,Z,V):
     ax.clabel(c, inline=1, fontsize=10)
 
 if __name__ == '__main__':
-    X,Y,Z,V = testdata()
+    X,Y,Z,V = testdata_2d()
     plotimagecontour(X,Y,Z,V)
     show()

@@ -65,7 +65,7 @@ axarr[1, 1].set_title('Axis [1,1]')
 plt.setp([a.get_xticklabels() for a in axarr[0, :]], visible=False)
 plt.setp([a.get_yticklabels() for a in axarr[:, 1]], visible=False)
 
-# Four polar axes
+#%% Four polar axes
 plt.subplots(2, 2, subplot_kw=dict(polar=True))
 
 plt.show()
