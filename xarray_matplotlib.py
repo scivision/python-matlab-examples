@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+"""
+matplotlib with datetime64 testing
+"""
 from datetime import datetime
 from matplotlib.pyplot import figure,show
 #%% generate data
