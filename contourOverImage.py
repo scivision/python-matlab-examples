@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+"""
+Plots an image, then plots a contour over top of the image
+"""
 from numpy.random import rand
 from numpy import meshgrid, arange
 from matplotlib.pyplot import figure,show
@@ -15,12 +19,13 @@ def testdata():
 def plotimagecontour(X,Y,Z,V):
     fg = figure()
     ax = fg.gca()
+    ax.set_title('independent color maps for image and contour')
+#%% image with colorbar
     h = ax.imshow(V,vmin=0,vmax=0.2,extent=(-3,3,-2,2),cmap='bone')
-    cb = fg.colorbar(h)
-    cb.set_label('image values')
+    fg.colorbar(h).set_label('image values')
+#%% contour over image
     c = ax.contour(X[0,:],Y[:,0],Z)
     ax.clabel(c, inline=1, fontsize=10)
-    ax.set_title('independent color maps for image and contour')
 
 if __name__ == '__main__':
     X,Y,Z,V = testdata()

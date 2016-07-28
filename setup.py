@@ -12,6 +12,7 @@ setup(name='python-matlab-examples',
 	    description='Tricks and tips with Matlab and Python',
 	    author='Michael Hirsch',
 	    url='https://github.com/scienceopen/python-matlab-examples',
+        packages = ['pyplots'],
         dependency_links = [],
 	    install_requires=[],
 	  )
