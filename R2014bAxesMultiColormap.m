@@ -1,4 +1,4 @@
-% Matlab R2014b-R2015a -- independent colormap on subaxes of same figure
+% Matlab >= R2014b -- independent colormap on subaxes of same figure
 
 f = figure(1); clf()
 a1 = subplot(1,2,1,'parent',f);
