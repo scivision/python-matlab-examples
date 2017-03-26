@@ -9,6 +9,11 @@ To be sure, I make the "from mpl_toolkits.mplot3d ..." line come first in my
 main function file (the one I invoke from the command line or Spyder)
 '''
 
+"""
+You can do much more sophisticated 3-D plots with Mayavi 
+https://github.com/scivision/mayavi-examples
+"""
+
 def test():
     x,y = meshgrid(linspace(0,2*pi),linspace(0,2*pi))
 
