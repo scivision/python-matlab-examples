@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """
 typecasting with h5py HDF5 demo
+see https://github.com/scivision/python-performance for HDF5 performance benchmarking
 """
 from tempfile import mkstemp
 import h5py
@@ -13,7 +14,7 @@ def demo_h5py_typecast(fn):
     data32 = float32([3.1416, 2.7183, 70000.1]) # true data
     data16 = int16(struct.unpack('%dh' % data32.size*2,data32)) # instrument output stream
 
-    print('using {}'.format(fn))
+    print('using',fn)
     with h5py.File(fn,'w') as h:
         h['int16'] = data16 #stream to disk
 
