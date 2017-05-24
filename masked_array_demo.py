@@ -2,7 +2,7 @@ import numpy as np
 from numpy.random import rand,randn
 import numpy.ma as ma
 
-# ficticious data vectors
+# fictitious data vectors
 L = 128
 v1 = randn(L)
 v2 = randn(L)
