@@ -3,7 +3,7 @@ python-learning
 ===============
 Examples of neat Python plotting and other tasks
 
-`f2py calling Fortran from Python easily <https://github.com/scienceopen/f2pyExamples>`_
+`f2py calling Fortran from Python easily <https://github.com/scivision/f2pyExamples>`_
 
 File Description:
 =================
