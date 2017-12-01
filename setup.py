@@ -1,18 +1,13 @@
 #!/usr/bin/env python
-req = ['numpy','h5py','matplotlib','bokeh']
+install_requires= ['numpy','h5py','matplotlib','bokeh']
 
-import pip
-try:
-    import conda.cli
-    conda.cli.main('install',*req)
-except Exception:
-    pip.main(['install'] + req)
 # %%
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='python-matlab-examples',
-        packages = ['pyplots'],
+        packages = find_packages(),
 	    description='Tricks and tips with Matlab and Python',
 	    author='Michael Hirsch, Ph.D.',
 	    url='https://github.com/scivision/python-matlab-examples',
+        install_requires=install_requires,
 	  )
