@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-install_requires = ['numpy', 'h5py', 'matplotlib>=2.1', 'bokeh']
+install_requires = ['numpy', 'h5py', 'matplotlib>=2.1', 'bokeh','plotly']
 tests_require = ['nose','coveralls']
 # %%
 from setuptools import setup, find_packages
