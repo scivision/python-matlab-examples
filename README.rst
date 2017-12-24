@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/scivision/python-matlab-examples.svg?branch=master
+    :target: https://travis-ci.org/scivision/python-matlab-examples
+    
 ===============
 python-learning
 ===============

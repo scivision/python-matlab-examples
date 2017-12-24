@@ -1,0 +1,20 @@
+language: python
+fast_finish: true
+
+python:
+  - 3.6
+
+os:
+  - linux
+
+notifications:
+  email: false
+
+git:
+  depth: 3
+
+install: pip install -e .[tests]
+
+script: coverage run tests/test.py -v
+
+after_success: coveralls
