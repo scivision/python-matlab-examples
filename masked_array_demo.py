@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import numpy as np
 from numpy.random import rand,randn
 import numpy.ma as ma

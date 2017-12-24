@@ -10,8 +10,10 @@ main function file (the one I invoke from the command line or Spyder)
 '''
 
 """
-You can do much more sophisticated 3-D plots with Mayavi 
-https://github.com/scivision/mayavi-examples
+You can do much more sophisticated 3-D plots with Mayavi
+    https://github.com/scivision/mayavi-examples
+or Plotly (offline or online):
+    https://github.com/scivision/plotly3d-examples-python
 """
 
 def test():
@@ -21,6 +23,7 @@ def test():
     ax = figure().gca(projection='3d')
     ax.plot_wireframe(x,y,z)
     show()
+
 
 if __name__ == '__main__':
     test()

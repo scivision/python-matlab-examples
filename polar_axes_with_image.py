@@ -8,14 +8,27 @@ It would involve reading the "size" of the axes and scaling circles to the axes 
 """
 from matplotlib.pyplot import figure,show
 #
-from pyplots.polarplot import polarplot
-from pyplots.data import testdata_2d
+from pyplots import polarplot
+from pyplots.data import random_img
 
-def polar_axes_image(X,Y,Z,V):
+def polar_axes_image(V):
     fg = figure()
 #%% create the image
     ax = fg.gca()
-    h = ax.imshow(V,vmin=0,vmax=0.2,extent=(-3,3,-2,2),cmap='bone')
+    h = ax.imshow(V,cmap='bone')
+    ax.set_title('image overlaid with polar axes')
+    #fg.colorbar(h).set_label('image values')
+#%% create transparent polar axes as a fiducial marking
+    ax2 = polarplot(None,None,fig=fg)
+    ax2.patch.set_alpha(.5)
+
+
+def polar_axes_pcolor(X,Y,Z):
+    fg = figure()
+#%% create the image
+    ax = fg.gca()
+    h = ax.pcolormesh(X,Y,Z,cmap='bone')
+    ax.set_title('pcolor overlaid with polar axes')
     #fg.colorbar(h).set_label('image values')
 #%% create transparent polar axes as a fiducial marking
     ax2 = polarplot(None,None,fig=fg)
@@ -23,8 +36,10 @@ def polar_axes_image(X,Y,Z,V):
 
 
 if __name__ == '__main__':
-    X,Y,Z,V = testdata_2d()
+    X,Y,Z,V = random_img()
 
-    polar_axes_image(X,Y,Z,V)
+    polar_axes_image(V)
+
+    polar_axes_pcolor(X,Y,Z)
 
     show()

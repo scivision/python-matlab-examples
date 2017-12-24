@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 """
 demo of polar plots in Python Matplotlib
-Michael Hirsch
 Ref: http://stackoverflow.com/questions/18721762/matplotlib-polar-plot-is-not-plotting-where-it-should
 
 This example is for an azimuth/elevation plot.
@@ -10,7 +9,7 @@ Elevation [0,90)
 """
 from matplotlib.pyplot import show
 #
-from pyplots.polarplot import polarplot
+from pyplots import polarplot
 
 
 if __name__ == '__main__':
