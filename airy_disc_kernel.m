@@ -1,15 +1,13 @@
 % https://github.com/astropy/astropy/blob/astropy/modeling/functional_models.py
-function z = airy_disc_kernel(N)
+function z = airy_disc_kernel(N, radius)
 
-
+if nargin<2, radius=3; end
+if nargin<4, x_0=0; y_0=0; end
+%%
 x = -N/2:N/2;
 y = x;
 
 [x,y] = meshgrid(x,y);
-
-x_0=0;
-y_0=0;
-radius=3;
 
 j1zero = 3.8317059702075125; % scipy.special.jn_zeros(1, 1)[0]
 
