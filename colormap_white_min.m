@@ -17,7 +17,7 @@ imagesc(I)
 axis('xy')
 title('simulated star field')
 %https://www.mrao.cam.ac.uk/~dag/CUBEHELIX/CubeHelix.m
-colormap(flipud(cubehelix))
+colormap(flipud(cubehelix()))
 
 colorbar()
 
