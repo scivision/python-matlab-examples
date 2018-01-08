@@ -20,7 +20,7 @@ File Description:
 * title_gitrev.py:  label title in corner with git revision
 * widgets_gui_matplotlib.py:  How to make interactiave, backend-agnostics Matplotlib GUIs
 * colormap_white_min.*: Matlab and Python examples of plots with white zero value and dark maximum value.
-============================ ================
+
 
 Oct2Py
 ------
