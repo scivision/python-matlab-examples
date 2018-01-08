@@ -1,5 +1,9 @@
 .. image:: https://travis-ci.org/scivision/python-matlab-examples.svg?branch=master
     :target: https://travis-ci.org/scivision/python-matlab-examples
+    
+.. image:: https://coveralls.io/repos/github/scivision/python-matlab-examples/badge.svg?branch=master
+    :target: https://coveralls.io/github/scivision/python-matlab-examples?branch=master
+
 
 ===============
 python-learning
@@ -18,6 +22,12 @@ File Description:
 * colormap_white_min.*: Matlab and Python examples of plots with white zero value and dark maximum value.
 ============================ ================
 
+Oct2Py
+------
+
+`Oct2Py <https://www.scivision.co/run-matlab-code-from-python-oct2py>`_ allows running Matlab code from Python, transparently.
+`test_oct2py.py <test_oct2py.py>`_ demos this for FIR filter design and Savitsky Golay filtering. 
+Of course, non-built-in functions can be used as well.
 
 Other neat tricks
 =================
