@@ -20,6 +20,7 @@ addons:
   apt:
     packages:
       - octave
+      - octave-signal
 
 install: pip install -e .[tests]
 
