@@ -4,6 +4,7 @@ Works through Oct2Py 3.9.0, Oct2Py 4.0.0-4.0.6 broken
 """
 import os
 import numpy as np
+import scipy.signal
 import oct2py
 print(oct2py.__version__)
 
@@ -16,12 +17,8 @@ def test_fir():
         oc.eval('pkg load signal')
         bmat = oc.fir1(m, p).squeeze()
     # %% Python
-    import scipy.signal
-
     bpy = scipy.signal.firwin(m+1, p)
     # %% plot
-    import numpy as np
-
     wmat, hmat = scipy.signal.freqz(bmat)
     wpy, hpy = scipy.signal.freqz(bpy)
 
@@ -72,8 +69,6 @@ def test_savgol():
         oc.eval('pkg load signal')
         ymat = oc.sgolayfilt(x, k, n).squeeze()
     # %% Python
-    import scipy.signal
-
     ypy = scipy.signal.savgol_filter(x, n, k)
     # %% plot
     np.testing.assert_allclose(ypy,ymat)
