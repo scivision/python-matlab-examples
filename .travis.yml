@@ -6,12 +6,20 @@ python:
 
 os:
   - linux
+  
+dist: trusty
+group: edge
 
 notifications:
   email: false
 
 git:
   depth: 3
+  
+addons:
+  apt:
+    packages:
+      - octave
 
 install: pip install -e .[tests]
 
