@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 install_requires = ['numpy', 'h5py', 'matplotlib>=2.1', 'bokeh','mpld3','astropy','scipy',
-            'oct2py==3.9']
+            'oct2py']
 tests_require = ['nose','coveralls']
 # %%
 from setuptools import setup, find_packages
