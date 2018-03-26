@@ -7,11 +7,7 @@ python:
 os:
   - linux
   
-dist: trusty
-group: edge
-
-notifications:
-  email: false
+group: travis_latest
 
 git:
   depth: 3
@@ -30,6 +26,11 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
 
-script: coverage run tests/test.py -v
+script:
+  - pytest -v
 
-after_success: coveralls
+after_success:
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.6* ]]; then 
+    coverage run tests/test_all.py;
+    coveralls; 
+    fi
