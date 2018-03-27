@@ -46,7 +46,7 @@ def test_imshow_datetime():
     im = np.random.random((Ny, t.size))
     y = range(t.size) # arbitrary
 
-    mt = mdates.date2num((t[0],t[-1]))
+    mt = mdates.date2num((t[0],t[-1])) # at least through Matplotlib 2.2
 
     fig = figure()
     ax = fig.gca()
@@ -54,7 +54,7 @@ def test_imshow_datetime():
 # %% datetime formatting
     ax.xaxis_date()  # like "num2date"
 
-    ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
+    #ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
 
 
     fig.autofmt_xdate()
