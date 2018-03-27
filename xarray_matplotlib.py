@@ -2,13 +2,14 @@
 """
 matplotlib with datetime64 testing
 """
+import xarray
 from datetime import datetime
 from matplotlib.pyplot import figure,show
 import matplotlib.dates as mdates
 import numpy as np
 
 
-def atest_plot2d_datetime():
+def test_plot2d_datetime():
     t = np.arange('2010-05-04T12:05:00','2010-05-04T12:05:01', dtype='datetime64[ms]')
     y = np.random.randn(t.size)
 
@@ -17,6 +18,23 @@ def atest_plot2d_datetime():
     ax = figure().gca()
     ax.plot(t,y)
 
+
+def test_plot2d_xarray():
+    t = np.arange('2010-05-04T12:05:00','2010-05-04T12:05:01', dtype='datetime64[ms]')
+    y = np.random.randn(t.size)
+
+    dat = xarray.DataArray(y,coords={'time':t},dims=['time'])
+
+    dset = xarray.Dataset({'random1Dstuff':dat})
+
+    fg = figure()
+    ax = fg.subplots(3,1,sharex=True)
+
+    dat.plot(ax=ax[0])
+
+    ax[1].plot(dat.time, dat)
+
+    dset['random1Dstuff'].plot(ax=ax[2])
 
 def test_imshow_datetime():
     """
