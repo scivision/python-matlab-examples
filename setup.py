@@ -16,7 +16,7 @@ setup(name='python-matlab-examples',
       tests_require=tests_require,
       extras_require={'tests':tests_require},
       python_requires='>=3.4',
-      classifiers=['
+      classifiers=[
         'Environment :: Console',
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
