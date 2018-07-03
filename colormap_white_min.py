@@ -13,20 +13,25 @@ from matplotlib.pyplot import figure, show
 #
 Nairy = 5
 
+
 def starsim(N=256):
-    I = np.zeros((N,N))
-    I = random_noise(I, 'salt', amount=0.0001)
-    I = convolve(I, AiryDisk2DKernel(Nairy))
+    im = np.zeros((N, N))
+    im = random_noise(im, 'salt', amount=0.0001)
+    im = convolve(im, AiryDisk2DKernel(Nairy))
 
-    return I
+    return im
 
 
-if __name__ == '__main__':
-    I = starsim()
+def main():
+    im = starsim()
 
     fig = figure()
     ax = fig.gca()
-    h = ax.imshow(I, cmap='cubehelix_r',origin='lower')
+    h = ax.imshow(im, cmap='cubehelix_r', origin='lower')
     fig.colorbar(h)
 
     show()
+
+
+if __name__ == '__main__':
+    main()

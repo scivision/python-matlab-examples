@@ -130,7 +130,7 @@ class Menu(object):
         maxw = max(item.labelwidth for item in menuitems)
         maxh = max(item.labelheight for item in menuitems)
 
-        totalh = self.numitems*maxh + (self.numitems + 1)*2*MenuItem.pady
+#        totalh = self.numitems*maxh + (self.numitems + 1)*2*MenuItem.pady
 
         x0 = 100
         y0 = 400

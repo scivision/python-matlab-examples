@@ -24,7 +24,6 @@ Z2 = mlab.bivariate_normal(X, Y, 1.5, 0.5, 1, 1)
 Z = 10.0 * (Z2 - Z1)
 
 
-
 # Create a simple contour plot with labels using default colors.  The
 # inline argument to clabel will control whether the labels are draw
 # over the line segments of the contour, removing the lines beneath
@@ -48,7 +47,7 @@ plt.title('labels at selected locations')
 # You can force all the contours to be the same color.
 plt.figure()
 CS = plt.contour(X, Y, Z, 6,
-                 colors='k', # negative contours will be dashed by default
+                 colors='k',  # negative contours will be dashed by default
                  )
 plt.clabel(CS, fontsize=9, inline=1)
 plt.title('Single color - negative contours dashed')
@@ -57,7 +56,7 @@ plt.title('Single color - negative contours dashed')
 matplotlib.rcParams['contour.negative_linestyle'] = 'solid'
 plt.figure()
 CS = plt.contour(X, Y, Z, 6,
-                 colors='k', # negative contours will be dashed by default
+                 colors='k',  # negative contours will be dashed by default
                  )
 plt.clabel(CS, fontsize=9, inline=1)
 plt.title('Single color - negative contours solid')
@@ -67,7 +66,7 @@ plt.title('Single color - negative contours solid')
 plt.figure()
 CS = plt.contour(X, Y, Z, 6,
                  linewidths=np.arange(.5, 4, .5),
-                 colors=('r', 'green', 'blue', (1,1,0), '#afeeee', '0.5')
+                 colors=('r', 'green', 'blue', (1, 1, 0), '#afeeee', '0.5')
                  )
 plt.clabel(CS, fontsize=9, inline=1)
 plt.title('Crazy lines')
@@ -77,14 +76,14 @@ plt.title('Crazy lines')
 # colormap will be used for the contour lines
 plt.figure()
 im = plt.imshow(Z, interpolation='bilinear', origin='lower',
-                cmap=cm.gray, extent=(-3,3,-2,2))
+                cmap=cm.gray, extent=(-3, 3, -2, 2))
 levels = np.arange(-1.2, 1.6, 0.2)
 CS = plt.contour(Z, levels,
                  origin='lower',
                  linewidths=2,
-                 extent=(-3,3,-2,2))
+                 extent=(-3, 3, -2, 2))
 
-#Thicken the zero contour.
+# Thicken the zero contour.
 zc = CS.collections[6]
 plt.setp(zc, linewidth=4)
 
@@ -97,7 +96,7 @@ plt.clabel(CS, levels[1::2],  # label every second level
 CB = plt.colorbar(CS, shrink=0.8, extend='both')
 
 plt.title('Lines with colorbar')
-#plt.hot()  # Now change the colormap for the contour lines and colorbar
+# plt.hot()  # Now change the colormap for the contour lines and colorbar
 plt.flag()
 
 # We can still add a colorbar for the image, too.
@@ -106,8 +105,8 @@ CBI = plt.colorbar(im, orientation='horizontal', shrink=0.8)
 # This makes the original colorbar look a bit out of place,
 # so let's improve its position.
 
-l,b,w,h = plt.gca().get_position().bounds
-ll,bb,ww,hh = CB.ax.get_position().bounds
+l, b, w, h = plt.gca().get_position().bounds
+ll, bb, ww, hh = CB.ax.get_position().bounds
 CB.ax.set_position([ll, b+0.1*h, ww, h*0.8])
 
 

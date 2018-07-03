@@ -1,7 +1,8 @@
 import numpy as np
 from matplotlib.pyplot import figure
 
-def polarplot(az,el,minel=0.,delv=10.,fig=None):
+
+def polarplot(az, el, minel=0., delv=10., fig=None):
     """
     az: azimuths of points to plot (degrees)
     el: elevation (above horizon) of points to plot (degrees)
@@ -17,10 +18,10 @@ def polarplot(az,el,minel=0.,delv=10.,fig=None):
     try:
         ax = fig.gca(polar=True)
     except AttributeError:
-        ax = figure().gca(polar=True) # Note the polar=True keyword
+        ax = figure().gca(polar=True)  # Note the polar=True keyword
 
-    #ax.plot(az,el, marker='o',linestyle='none') # you can use other markers or linestyles too
-#%% boilerplate
+    # ax.plot(az,el, marker='o',linestyle='none') # you can use other markers or linestyles too
+# %% boilerplate
     #     We reverse direction of "elevation" to make center of plot 90 deg.
     ax.set_theta_zero_location('N')
     ax.set_theta_direction(-1)

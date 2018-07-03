@@ -15,8 +15,8 @@ from pyplots import polarplot
 if __name__ == '__main__':
 
     # arbitrary test numbers
-    az = [10,50,30,185,273]
-    el = [30,5, 80,36, 29]
+    az = [10, 50, 30, 185, 273]
+    el = [30, 5, 80, 36, 29]
 
-    polarplot(az,el)
+    polarplot(az, el)
     show()

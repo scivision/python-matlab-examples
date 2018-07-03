@@ -25,16 +25,13 @@ def slider_radio():
         l.set_ydata(amp*np.sin(2*np.pi*freq*t))
         fig.canvas.draw_idle()
 
-
     def reset(event):
         sfreq.reset()
         samp.reset()
 
-
     def colorfunc(label):
         l.set_color(label)
         fig.canvas.draw_idle()
-
 
     fig = figure()
     ax = fig.subplots()
@@ -64,10 +61,9 @@ def slider_radio():
     radio = RadioButtons(rax, ('red', 'blue', 'green'), active=0)
     radio.on_clicked(colorfunc)
 # %% scoping
-    axw = [axfreq,axamp,sfreq,samp,button,radio]  # place to hold all the axesWidgets to keep in scope
+    axw = [axfreq, axamp, sfreq, samp, button, radio]  # place to hold all the axesWidgets to keep in scope
 
     return axw  # MUST return ax or GUI will be non-responsive!
-
 
 
 if __name__ == '__main__':

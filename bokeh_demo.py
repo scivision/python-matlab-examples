@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 import numpy as np
-from bokeh.plotting import show,figure,output_file
+from bokeh.plotting import show, figure, output_file
 
 N = 100
 
 x = np.linspace(0, 4*np.pi, N)
 y = np.sin(x)
 
-output_file("legend.html", title="legend.py example",mode='cdn')
+output_file("legend.html", title="legend.py example", mode='cdn')
 
 fg1 = figure(tools="pan,wheel_zoom,box_zoom,reset,previewsave")
 

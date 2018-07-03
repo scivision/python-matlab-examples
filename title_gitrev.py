@@ -9,12 +9,12 @@ This is helpful for when a colleague wants a plot exactly recreated from a year 
 http://matplotlib.org/api/figure_api.html
 """
 import subprocess
-from matplotlib.pyplot import figure,show
+from matplotlib.pyplot import figure, show
 
 try:
     gitrev = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'],
                                      universal_newlines=True).strip('\n')
-except Exception: # maybe they don't have git installed
+except Exception:  # maybe they don't have git installed
     gitrev = ''
 
 fg = figure()
