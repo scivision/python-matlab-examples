@@ -1,3 +1,5 @@
+.mypy_cache/
+.pytest_cache/
 .idea/
 .ipynb_checkpoints/
 *.html
