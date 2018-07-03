@@ -1,13 +1,16 @@
 language: python
 fast_finish: true
+sudo: required  # temporarily needed for xenial + 3.7 (July 2018)
+
 
 python:
   - 3.6
-  - 3.7-dev
+  - 3.7
 
 os:
   - linux
   
+dist: xenial
 group: travis_latest
 
 git:
