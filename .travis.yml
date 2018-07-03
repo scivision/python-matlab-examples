@@ -1,7 +1,8 @@
 language: python
 fast_finish: true
-sudo: required  # temporarily needed for xenial + 3.7 (July 2018)
-
+sudo: required  
+# temporarily needed for xenial + 3.7 (July 2018)
+# https://github.com/travis-ci/travis-ci/issues/9815
 
 python:
   - 3.6
