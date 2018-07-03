@@ -34,6 +34,8 @@ allows running Matlab code from Python, transparently.
 [test_oct2py.py](test_oct2py.py) demos this for FIR filter design and Savitsky Golay filtering. 
 Of course, non-built-in functions can be used as well.
 
+NOTE: as of summer 2018, use `oct2py==3.9.0` as Oct2Py 4.0.7 is broken.
+
 ## Other neat tricks
 
 -   f2py calling [Fortran from Python](https://github.com/scivision/f2pyExamples)
