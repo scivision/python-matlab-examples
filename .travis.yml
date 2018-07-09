@@ -1,8 +1,11 @@
 language: python
-fast_finish: true
-sudo: required  
-# temporarily needed for xenial + 3.7 (July 2018)
-# https://github.com/travis-ci/travis-ci/issues/9815
+sudo: required
+dist: xenial
+group: travis_latest
+
+git:
+  depth: 3
+  quiet: true
 
 python:
   - 3.6
@@ -10,12 +13,6 @@ python:
 
 os:
   - linux
-  
-dist: xenial
-group: travis_latest
-
-git:
-  depth: 3
   
 addons:
   apt:
@@ -32,12 +29,12 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 script:
-  - pytest -v
+  - pytest -sv
   - flake8
   - mypy . --ignore-missing-imports
 
 after_success:
-  - if [[ $TRAVIS_PYTHON_VERSION == 3.6* ]]; then 
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.6* ]]; then
     pytest --cov;
-    coveralls; 
+    coveralls;
     fi
