@@ -9,11 +9,10 @@ import scipy.signal
 import oct2py
 print(oct2py.__version__)
 
-CI = bool(os.environ['CI']) if 'CI' in os.environ else False
+CI = bool(os.environ.get('CI'))
 
 
-@pytest.fixture()
-def test_fir():
+def demo_fir():
     m = 7
     p = 0.2
 
@@ -62,7 +61,7 @@ def test_savgol():
 def test_plot_filter():
     from matplotlib.pyplot import figure, show
 
-    wmat, hmat, wpy, hpy, hmat_db, hpy_db = test_fir()
+    wmat, hmat, wpy, hpy, hmat_db, hpy_db = demo_fir()
 
     figure(1).clf()
     ax = figure(1).subplots(2, 1, sharex=True)
@@ -86,4 +85,4 @@ def test_plot_filter():
 
 
 if __name__ == '__main__':
-    pytest.main()
+    pytest.main(['-x', __file__])

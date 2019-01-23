@@ -2,28 +2,20 @@ language: python
 group: travis_latest
 dist: xenial
 
+services: xvfb
+
 git:
   depth: 3
   quiet: true
 
 python:
 - 3.6
-#- 3.7 conserving travis resources--tested in coverage
-
-os:
-- linux
 
 addons:
   apt:
     packages:
     - octave
     - octave-signal
-
-# Fake X11 server
-before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
 
 matrix:
   include:
@@ -34,7 +26,7 @@ matrix:
     - flake8
     - mypy . --ignore-missing-imports
     after_success:
-    - pytest --cov --cov-config=setup.cfg
+    - pytest --cov
     - coveralls
 
 install: pip install -e .[tests]
