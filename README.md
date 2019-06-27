@@ -5,9 +5,6 @@
 
 Examples of neat Python and Matlab / GNU Octave plotting and other tasks
 
-* Matplotlib 2.1 
- [What's New](https://matplotlib.org/devdocs/users/whats_new.html#new-in-matplotlib-2-1)
-
 ## File Description:
 
 -   contourImage2.m: hack to work around Matlab R2014b/R2015a removal of
@@ -31,11 +28,9 @@ Examples of neat Python and Matlab / GNU Octave plotting and other tasks
 
 [Oct2Py](https://www.scivision.co/run-matlab-code-from-python-oct2py)
 allows running Matlab code from Python, transparently.
-[test_oct2py.py](test_oct2py.py) demos this for FIR filter design and Savitsky Golay filtering. 
+[test_oct2py.py](test_oct2py.py) demos this for FIR filter design and Savitsky Golay filtering.
 Of course, non-built-in functions can be used as well.
-
-NOTE: as of summer 2018, use `oct2py==3.9.0` as Oct2Py 4.0.7 is broken.
 
 ## Other neat tricks
 
--   f2py calling [Fortran from Python](https://github.com/scivision/f2pyExamples)
+* f2py calling [Fortran from Python](https://github.com/scivision/f2py-examples)

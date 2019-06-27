@@ -1,12 +1,18 @@
 #!/usr/bin/env python
-from oct2py import Oct2Py
+"""
+Shows a bug with Oct2Py through at least Oct2Py 5.0.4
+"""
+import oct2py
 
 val = 3.5  # arbitrary
 
-with Oct2Py() as oc:
+with oct2py.Oct2Py() as oc:
     a = oc.oct2py_class()
 
-    a.Value = val
+    try:
+        a.Value = val
 
-    print(a.Value)
-    print(a.roundOff)
+        print(a.Value)
+        print(a.roundOff)
+    except oct2py.Oct2PyError as e:
+        print(f'known bug in Oct2Py: cannot handle classes  {e}')

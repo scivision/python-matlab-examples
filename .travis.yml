@@ -22,9 +22,9 @@ matrix:
   - os: linux
     python: 3.7
     install: pip install -e .[tests,cov]
-    script: 
+    script:
     - flake8
-    - mypy . --ignore-missing-imports
+    - mypy .
     after_success:
     - pytest --cov
     - coveralls
@@ -32,5 +32,4 @@ matrix:
 install: pip install -e .[tests]
 
 script: pytest -rsv
-
 
