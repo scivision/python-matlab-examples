@@ -26,7 +26,7 @@ Examples of neat Python and Matlab / GNU Octave plotting and other tasks
 
 ### Oct2Py
 
-[Oct2Py](https://www.scivision.co/run-matlab-code-from-python-oct2py)
+[Oct2Py](https://www.scivision.dev/run-matlab-code-from-python-oct2py)
 allows running Matlab code from Python, transparently.
 [test_oct2py.py](test_oct2py.py) demos this for FIR filter design and Savitsky Golay filtering.
 Of course, non-built-in functions can be used as well.

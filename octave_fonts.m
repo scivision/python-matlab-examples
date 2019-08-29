@@ -10,16 +10,16 @@
 % You must be using "ftlk" or "qt" backends.
 % The 'qt' backend is ONLY available if you use "octave" not "octave-cli"
 % QT is the preferred backend, FLTK and GNUplot are soft-deprecated.
-% 
+%
 % Further details:
-% https://www.scivision.co/gnu-octave-octaverc-default-suggested/
+% https://www.scivision.dev/gnu-octave-octaverc-default-suggested/
 % https://octave.org/doc/v4.4.0/Text-Properties.html
 
 try % Octave only
   backends = available_graphics_toolkits();
   disp('available backends: ')
   disp(backends)
-  
+
   % graphics_toolkit('qt')  % force graphics backend like this, normally not needed.
 
   backend = graphics_toolkit();
