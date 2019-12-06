@@ -10,6 +10,7 @@ def pcolormesh_nan(x: np.ndarray, y: np.ndarray, c: np.ndarray, cmap=None, axis=
 
     mask = np.isfinite(x) & np.isfinite(y)
     top = None
+    bottom = None
 
     for i, m in enumerate(mask):
         good = m.nonzero()[0]
