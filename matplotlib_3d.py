@@ -1,13 +1,5 @@
-#!/usr/bin/env python
-"""
-Axes3D import must come before other Matplotlib imports
+#!/usr/bin/env python3
 
-"from mpl_toolkits.mplot3d import Axes3D" needs to come before
-the "from matplotlib.pyplot import ...." line in the FIRST file you run.
-To be sure, I make the "from mpl_toolkits.mplot3d ..." line come first in my
-main function file (the one I invoke from the command line or Spyder)
-"""
-from mpl_toolkits.mplot3d import Axes3D  # noqa: F401
 from matplotlib.pyplot import figure, show
 from numpy import linspace, meshgrid, pi, sin  # for testing
 

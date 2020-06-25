@@ -1,10 +1,7 @@
-name: ci_python
+name: ci
 
 on:
   push:
-    paths:
-      - "**.py"
-  pull_request:
     paths:
       - "**.py"
 
@@ -13,10 +10,11 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-python@v1
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
+
     - run: pip install flake8 mypy
     - run: flake8
     - run: mypy .
