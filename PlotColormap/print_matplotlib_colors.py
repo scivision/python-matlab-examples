@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-prints matplotlib colors so you can copy and pase, unlike
+prints matplotlib colors so you can copy and paste, unlike
 https://matplotlib.org/3.1.0/gallery/color/named_colors.html
 """
 import argparse

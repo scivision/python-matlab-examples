@@ -18,5 +18,5 @@ z = ones(size(r));
 
 rt = pi * r(r > 0);
 z(r > 0) = (2 * besselj(1,rt) ./ rt) .^ 2;
-  
+
 end % function

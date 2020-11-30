@@ -2,7 +2,9 @@
 
 ![Actions Status](https://github.com/scivision/python-matlab-examples/workflows/ci/badge.svg)
 
-Examples of neat Python and Matlab / GNU Octave plotting and other tasks
+Examples of neat Python and Matlab / GNU Octave
+[plotting](./PlotExamples)
+and other tasks.
 
 ## File Description
 
