@@ -1,8 +1,12 @@
 % https://github.com/astropy/astropy/blob/astropy/modeling/functional_models.py
 function z = airy_disc_kernel(N, radius)
+arguments
+  N (1,1) {mustBePositive}
+  radius (1,1) {mustBePositive} = 3
+end
 
-if nargin<2, radius=3; end
-if nargin<4, x_0=0; y_0=0; end
+x_0=0;
+y_0=0;
 %%
 x = -N/2:N/2;
 y = x;
