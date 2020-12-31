@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import numpy as np
 from matplotlib.pyplot import figure, show
 
@@ -22,11 +22,11 @@ def pcolormesh_nan(x: np.ndarray, y: np.ndarray, c: np.ndarray, cmap=None, axis=
         else:
             bottom = i
 
-        x[i, good[-1]:] = x[i, good[-1]]
-        y[i, good[-1]:] = y[i, good[-1]]
+        x[i, good[-1] :] = x[i, good[-1]]
+        y[i, good[-1] :] = y[i, good[-1]]
 
-        x[i, :good[0]] = x[i, good[0]]
-        y[i, :good[0]] = y[i, good[0]]
+        x[i, : good[0]] = x[i, good[0]]
+        y[i, : good[0]] = y[i, good[0]]
 
     x[:top, :] = np.nanmax(x[top, :])
     y[:top, :] = np.nanmax(y[top, :])
@@ -44,21 +44,21 @@ def main():
     N = 64
     r = 4
 
-    x = np.linspace(-5., 5., N)
-    y = np.linspace(-10., 10., N)
+    x = np.linspace(-5.0, 5.0, N)
+    y = np.linspace(-10.0, 10.0, N)
 
     x, y = np.meshgrid(x, y)
-    mask = x**2 + y**2 <= r**2
+    mask = x ** 2 + y ** 2 <= r ** 2
     x[~mask] = np.nan
     print(mask)
 
     c = np.random.random((N, N))
 
     ax = figure(1).gca()
-    pcolormesh_nan(x, y, c, cmap='gray', axis=ax)
+    pcolormesh_nan(x, y, c, cmap="gray", axis=ax)
 
     show()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

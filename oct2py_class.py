@@ -15,4 +15,4 @@ with oct2py.Oct2Py() as oc:
         print(a.Value)
         print(a.roundOff)
     except oct2py.Oct2PyError as e:
-        print(f'known bug in Oct2Py: cannot handle classes  {e}')
+        print(f"known bug in Oct2Py: cannot handle classes  {e}")

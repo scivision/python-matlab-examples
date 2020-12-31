@@ -7,7 +7,7 @@ from typing import Tuple
 
 def random_img() -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     delta = 0.025
-    V = 0.1*rand(100, 100)
+    V = 0.1 * rand(100, 100)
     x = arange(-3.0, 3.0, delta)
     y = arange(-2.0, 2.0, delta)
     X, Y = meshgrid(x, y)

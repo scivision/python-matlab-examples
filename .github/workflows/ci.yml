@@ -17,4 +17,4 @@ jobs:
 
     - run: pip install flake8 mypy
     - run: flake8
-    - run: mypy .
+    - run: mypy

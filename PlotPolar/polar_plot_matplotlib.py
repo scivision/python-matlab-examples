@@ -8,11 +8,12 @@ Azimuth [0,360) with north at 0 degrees
 Elevation [0,90)
 """
 from matplotlib.pyplot import show
+
 #
 from pyplots import polarplot
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     # arbitrary test numbers
     az = [10, 50, 30, 185, 273]

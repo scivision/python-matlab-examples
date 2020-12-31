@@ -3,8 +3,8 @@ import ephem
 import datetime
 
 Boston = ephem.Observer()
-Boston.lat = '42.3462'
-Boston.lon = '-71.0978'
+Boston.lat = "42.3462"
+Boston.lon = "-71.0978"
 Boston.date = datetime.datetime.now()
 # %% these parameters are for super-precise estimates, not necessary.
 Boston.elevation = 3  # meters

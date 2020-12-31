@@ -13,6 +13,7 @@ HOWEVER, this didn't work for me on multiple PCs with Matplotlib 2.2.0
 See https://github.com/scivision/histfeas/blob/master/Plots/FirstAuroralConjugate.py
 """
 import matplotlib
+
 # %% remove old font cache
 cachepath = matplotlib.get_cachedir()
 

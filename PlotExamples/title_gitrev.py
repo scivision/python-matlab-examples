@@ -12,15 +12,16 @@ import subprocess
 from matplotlib.pyplot import figure, show
 
 try:
-    gitrev = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'],
-                                     universal_newlines=True).strip('\n')
+    gitrev = subprocess.check_output(
+        ["git", "rev-parse", "--short", "HEAD"], universal_newlines=True
+    ).strip("\n")
 except Exception:  # maybe they don't have git installed
-    gitrev = ''
+    gitrev = ""
 
 fg = figure()
 ax = fg.gca()
 ax.plot([1, 2])
-ax.set_title('my cool plot')
-fg.text(1., 1., 'git: ' + gitrev, ha='right', va='top', rotation='vertical')
+ax.set_title("my cool plot")
+fg.text(1.0, 1.0, "git: " + gitrev, ha="right", va="top", rotation="vertical")
 
 show()

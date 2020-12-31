@@ -7,9 +7,10 @@ import os
 import numpy as np
 import scipy.signal
 import oct2py
+
 print(oct2py.__version__)
 
-CI = bool(os.environ.get('CI'))
+CI = bool(os.environ.get("CI"))
 
 
 def demo_fir():
@@ -17,15 +18,15 @@ def demo_fir():
     p = 0.2
 
     with oct2py.Oct2Py() as oc:
-        oc.eval('pkg load signal')
+        oc.eval("pkg load signal")
         bmat = oc.fir1(m, p).squeeze()
     # %% Python
-    bpy = scipy.signal.firwin(m+1, p)
+    bpy = scipy.signal.firwin(m + 1, p)
     # %% plot
     wmat, hmat = scipy.signal.freqz(bmat)
     wpy, hpy = scipy.signal.freqz(bpy)
 
-    hmat_db = 20*np.log10(abs(hmat))
+    hmat_db = 20 * np.log10(abs(hmat))
     hpy_db = 20 * np.log10(abs(hpy))
 
     assert (hmat_db[:130] > -6).all()
@@ -44,16 +45,16 @@ def test_savgol():
 
     k = 3  # filter length
     n = 5  # filter order
-# %% noisy signal
-    x = np.array([0., 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0])
+    # %% noisy signal
+    x = np.array([0.0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0])
     x += np.random.randn(x.size)
-# %% Octave
-    with oct2py.Oct2Py(oned_as='column') as oc:
-        oc.eval('pkg load signal')
+    # %% Octave
+    with oct2py.Oct2Py(oned_as="column") as oc:
+        oc.eval("pkg load signal")
         ymat = oc.sgolayfilt(x, k, n).squeeze()
-# %% Python
+    # %% Python
     ypy = scipy.signal.savgol_filter(x, n, k)
-# %% plot
+    # %% plot
     np.testing.assert_allclose(ypy, ymat)
 
 
@@ -65,24 +66,24 @@ def test_plot_filter():
 
     figure(1).clf()
     ax = figure(1).subplots(2, 1, sharex=True)
-    ax[0].set_title('FIR1() vs. firwin() frequency response')
-    ax[0].plot(wmat, hmat_db, label='Matlab')
-    ax[0].plot(wpy, hpy_db, label='Python')
-    ax[0].set_ylabel('Amplitude [dB]')
+    ax[0].set_title("FIR1() vs. firwin() frequency response")
+    ax[0].plot(wmat, hmat_db, label="Matlab")
+    ax[0].plot(wpy, hpy_db, label="Python")
+    ax[0].set_ylabel("Amplitude [dB]")
     ax[0].grid(True)
     ax[0].legend()
 
     angmat = np.unwrap(np.angle(hmat))
     angpy = np.unwrap(np.angle(hpy))
-    ax[1].plot(wmat, angmat, label='Matlab')
-    ax[1].plot(wpy, angpy, label='Python')
-    ax[1].set_ylabel('Angle (radians)')
+    ax[1].plot(wmat, angmat, label="Matlab")
+    ax[1].plot(wpy, angpy, label="Python")
+    ax[1].set_ylabel("Angle (radians)")
     ax[1].grid(True)
-    ax[1].set_xlabel('Frequency [rad/sample]')
+    ax[1].set_xlabel("Frequency [rad/sample]")
     ax[1].legend()
 
     show()
 
 
-if __name__ == '__main__':
-    pytest.main(['-x', __file__])
+if __name__ == "__main__":
+    pytest.main(["-x", __file__])

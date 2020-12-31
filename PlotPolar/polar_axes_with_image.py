@@ -14,26 +14,26 @@ from pyplots.data import random_img
 
 def polar_axes_image(V: np.ndarray):
     fg = figure()
-# %% create the image
+    # %% create the image
     ax = fg.gca()
-    h = ax.imshow(V, cmap='bone')
-    ax.set_title('image overlaid with polar axes')
-    fg.colorbar(h).set_label('image values')
-# %% create transparent polar axes as a fiducial marking
+    h = ax.imshow(V, cmap="bone")
+    ax.set_title("image overlaid with polar axes")
+    fg.colorbar(h).set_label("image values")
+    # %% create transparent polar axes as a fiducial marking
     ax2 = polarplot(None, None, fig=fg)
-    ax2.patch.set_alpha(.5)
+    ax2.patch.set_alpha(0.5)
 
 
 def polar_axes_pcolor(X: np.ndarray, Y: np.ndarray, Z: np.ndarray):
     fg = figure()
-# %% create the image
+    # %% create the image
     ax = fg.gca()
-    h = ax.pcolormesh(X, Y, Z, cmap='bone')
-    ax.set_title('pcolor overlaid with polar axes')
-    fg.colorbar(h).set_label('image values')
-# %% create transparent polar axes as a fiducial marking
+    h = ax.pcolormesh(X, Y, Z, cmap="bone")
+    ax.set_title("pcolor overlaid with polar axes")
+    fg.colorbar(h).set_label("image values")
+    # %% create transparent polar axes as a fiducial marking
     ax2 = polarplot(None, None, fig=fg)
-    ax2.patch.set_alpha(.5)
+    ax2.patch.set_alpha(0.5)
 
 
 def main():
@@ -46,5 +46,5 @@ def main():
     show()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

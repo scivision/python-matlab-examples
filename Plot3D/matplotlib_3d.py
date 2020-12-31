@@ -12,13 +12,13 @@ or Plotly (offline or online):
 
 
 def test():
-    x, y = meshgrid(linspace(0, 2*pi), linspace(0, 2*pi))
+    x, y = meshgrid(linspace(0, 2 * pi), linspace(0, 2 * pi))
 
-    z = sin(x+0.5*y)
-    ax = figure().gca(projection='3d')
+    z = sin(x + 0.5 * y)
+    ax = figure().gca(projection="3d")
     ax.plot_wireframe(x, y, z)
     show()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test()

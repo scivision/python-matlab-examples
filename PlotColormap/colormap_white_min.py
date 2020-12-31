@@ -10,13 +10,14 @@ from astropy.convolution import AiryDisk2DKernel
 from astropy.convolution import convolve
 from skimage.util import random_noise
 from matplotlib.pyplot import figure, show
+
 #
 Nairy = 5
 
 
 def starsim(N=256):
     im = np.zeros((N, N))
-    im = random_noise(im, 'salt', amount=0.0001)
+    im = random_noise(im, "salt", amount=0.0001)
     im = convolve(im, AiryDisk2DKernel(Nairy))
 
     return im
@@ -27,11 +28,11 @@ def main():
 
     fig = figure()
     ax = fig.gca()
-    h = ax.imshow(im, cmap='cubehelix_r', origin='lower')
+    h = ax.imshow(im, cmap="cubehelix_r", origin="lower")
     fig.colorbar(h)
 
     show()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
