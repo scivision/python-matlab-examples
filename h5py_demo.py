@@ -11,7 +11,6 @@ from numpy.testing import assert_array_equal
 
 
 def demo_h5py_typecast(fn):
-
     data32 = float32([3.1416, 2.7183, 70000.1])  # true data
     data16 = int16(struct.unpack("%dh" % data32.size * 2, data32))  # instrument output stream
 

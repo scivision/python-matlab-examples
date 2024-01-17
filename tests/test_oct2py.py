@@ -1,7 +1,5 @@
-#!/usr/bin/env python
-"""
-Works through Oct2Py 3.9.0, Oct2Py 4.0.0-4.0.6 broken
-"""
+#!/usr/bin/env python3
+
 import pytest
 import os
 import numpy as np
@@ -42,7 +40,6 @@ def demo_fir():
 
 
 def test_savgol():
-
     k = 3  # filter length
     n = 5  # filter order
     # %% noisy signal
@@ -83,7 +80,3 @@ def test_plot_filter():
     ax[1].legend()
 
     show()
-
-
-if __name__ == "__main__":
-    pytest.main(["-x", __file__])

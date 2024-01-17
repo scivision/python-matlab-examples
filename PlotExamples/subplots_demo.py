@@ -10,7 +10,7 @@ P = "Press Enter to continue to next plot..."
 
 # Simple data to display in various forms
 x = np.linspace(0, 2 * np.pi, 400)
-y = np.sin(x ** 2)
+y = np.sin(x**2)
 
 # Just a figure and one subplot
 ax = figure(1, clear=True).subplots()
@@ -41,7 +41,7 @@ ax1, ax2, ax3 = fig.subplots(3, sharex=True, sharey=True)
 ax1.plot(x, y)
 ax1.set_title("Sharing both axes")
 ax2.scatter(x, y)
-ax3.scatter(x, 2 * y ** 2 - 1, color="r")
+ax3.scatter(x, 2 * y**2 - 1, color="r")
 # Fine-tune figure; make subplots close to each other and hide x ticks for
 # all but bottom plot.
 fig.subplots_adjust(hspace=0)
@@ -53,8 +53,8 @@ input(P)
 ax1.plot(x, y)
 ax1.set_title("Sharing x per column, y per row")
 ax2.scatter(x, y)
-ax3.scatter(x, 2 * y ** 2 - 1, color="r")
-ax4.plot(x, 2 * y ** 2 - 1, color="r")
+ax3.scatter(x, 2 * y**2 - 1, color="r")
+ax4.plot(x, 2 * y**2 - 1, color="r")
 show(False)
 input(P)
 
@@ -64,9 +64,9 @@ axarr[0, 0].plot(x, y)
 axarr[0, 0].set_title("Axis [0,0]")
 axarr[0, 1].scatter(x, y)
 axarr[0, 1].set_title("Axis [0,1]")
-axarr[1, 0].plot(x, y ** 2)
+axarr[1, 0].plot(x, y**2)
 axarr[1, 0].set_title("Axis [1,0]")
-axarr[1, 1].scatter(x, y ** 2)
+axarr[1, 1].scatter(x, y**2)
 axarr[1, 1].set_title("Axis [1,1]")
 
 # %% Four polar axes

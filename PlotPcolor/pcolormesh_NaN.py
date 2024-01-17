@@ -48,7 +48,7 @@ def main():
     y = np.linspace(-10.0, 10.0, N)
 
     x, y = np.meshgrid(x, y)
-    mask = x ** 2 + y ** 2 <= r ** 2
+    mask = x**2 + y**2 <= r**2
     x[~mask] = np.nan
     print(mask)
 
