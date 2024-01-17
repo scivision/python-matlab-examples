@@ -1,6 +1,6 @@
 # Python and Matlab plotting examples
 
-![Actions Status](https://github.com/scivision/python-matlab-examples/workflows/ci/badge.svg)
+[![ci](https://github.com/scivision/python-matlab-examples/actions/workflows/ci.yml/badge.svg)](https://github.com/scivision/python-matlab-examples/actions/workflows/ci.yml)
 
 Examples of neat Python and Matlab / GNU Octave
 [plotting](./PlotExamples)
